@@ -6,15 +6,16 @@
 #    By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/21 03:32:26 by gpaul             #+#    #+#              #
-#    Updated: 2021/09/13 17:30:32 by gpaul            ###   ########.fr        #
+#    Updated: 2021/09/13 19:21:17 by gpaul            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-_SRCS =		main.c		\
-			cpy_arg.c	\
-			error.c		\
+_SRCS =		main.c			\
+			cpy_arg.c		\
+			error.c			\
+			operations.c	\
 
 
 SRCS_DIR = srcs

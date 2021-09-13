@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/13 17:36:27 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/13 19:51:46 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,13 @@ void	error_free(t_info *tab);
 	PARSE
 */
 int	*cpy_arg(int argc, char **argv, t_info *tab);
+
+/*
+	OPERATIONS
+*/
+int	swap(int *tab);
+int	rotate(int *tab, int size);
+int	rev_rotate(int *tab, int size);
+int	push(int *from, int *to, int size);
 
 #endif
