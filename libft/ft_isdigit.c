@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 15:40:35 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/13 19:41:20 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/14 18:43:45 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int i)
+int	ft_isdigit(int i)
 {
 	if ((i >= 48 && i <= 57) || i == 45)
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 16:39:47 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/05 11:01:26 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:04:43 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*str;
 
 	i = 0;
-	str = (char*)s;
+	str = (char *)s;
 	while (str[i])
 		i++;
 	while (i + 1 > 0)

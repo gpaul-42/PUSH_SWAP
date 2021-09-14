@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 00:41:14 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/08 11:46:13 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:02:22 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	if (dest == NULL && src == NULL)
 		return (dest);
-	de = (char*)dest;
-	s = (char*)src;
+	de = (char *)dest;
+	s = (char *)src;
 	while (i < n)
 	{
 		de[i] = s[i];
 		i++;
 	}
-	return ((void*)de);
+	return ((void *)de);
 }

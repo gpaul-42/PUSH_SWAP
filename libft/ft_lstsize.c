@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:35:52 by gpaul             #+#    #+#             */
-/*   Updated: 2020/10/12 20:39:37 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:03:32 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		i;
 

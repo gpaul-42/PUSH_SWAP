@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/02 17:54:46 by gpaul             #+#    #+#             */
-/*   Updated: 2021/06/30 16:08:00 by gpaul            ###   ########.fr       */
+/*   Created: 2021/09/14 18:04:01 by gpaul             #+#    #+#             */
+/*   Updated: 2021/09/14 18:26:30 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	*check_malloc(int size, t_info *tab)
 {
-	char				*str;
-	char				*re;
-	unsigned int		i;
+	int	*tmp;
 
-	i = 0;
-	str = (char *)s;
-	if (!s)
-		return (NULL);
-	re = malloc(sizeof(char) * (ft_strlen(str) + 1));
-	if (re == NULL)
-		return (NULL);
-	while (s[i])
-	{
-		re[i] = f(i, str[i]);
-		i++;
-	}
-	re[i] = '\0';
-	return (re);
+	tmp = malloc(sizeof(int) * size);
+	if (tmp == NULL)
+		error_free(tab);
+	return (tmp);
 }

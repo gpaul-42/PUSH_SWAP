@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 19:47:56 by gpaul             #+#    #+#             */
-/*   Updated: 2020/10/12 20:06:12 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 15:56:46 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst)
 	{

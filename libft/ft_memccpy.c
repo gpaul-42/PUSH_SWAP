@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 03:09:39 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/06 15:24:13 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:02:40 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	int				x;
 
 	x = 0;
-	dst = (unsigned char*)dest;
-	str = (unsigned char*)src;
+	dst = (unsigned char *)dest;
+	str = (unsigned char *)src;
 	i = 0;
 	while (i < n && x == 0)
 	{
@@ -33,5 +33,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	if (x == 0)
 		return (NULL);
 	else
-		return ((void*)dst + x);
+		return ((void *)dst + x);
 }

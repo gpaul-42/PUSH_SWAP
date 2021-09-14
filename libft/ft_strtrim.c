@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 21:29:39 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/07 14:26:29 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:28:41 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_sep(char c, char *charset)
+static int	ft_sep(char c, char *charset)
 {
 	int		i;
 
@@ -26,7 +26,7 @@ static int		ft_sep(char c, char *charset)
 	return (0);
 }
 
-static int		ft_lenght(char *s1_cp, char *charset)
+static int	ft_lenght(char *s1_cp, char *charset)
 {
 	int		i;
 	int		n;
@@ -43,7 +43,7 @@ static int		ft_lenght(char *s1_cp, char *charset)
 	return (size);
 }
 
-static char		*ft_alloc(char *str, char *s1_cp, char *charset)
+static char	*ft_alloc(char *str, char *s1_cp, char *charset)
 {
 	int		i;
 	int		n;
@@ -66,22 +66,28 @@ static char		*ft_alloc(char *str, char *s1_cp, char *charset)
 	return (str);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	char	*s1_cp;
 	char	*charset;
 
-	if (s1 == (void*)0)
+	if (s1 == (void *)0)
 		return ("0");
-	s1_cp = (char*)s1;
-	charset = (char*)set;
+	s1_cp = (char *)s1;
+	charset = (char *)set;
 	if (ft_lenght(s1_cp, charset) > 0)
-		if (!(str = malloc(sizeof(char) * ((ft_lenght(s1_cp, charset) + 1)))))
+	{
+		str = malloc(sizeof(char) * ((ft_lenght(s1_cp, charset) + 1)));
+		if (str == NULL)
 			return (NULL);
+	}
 	if (ft_lenght(s1_cp, charset) < 0)
-		if (!(str = malloc(sizeof(char) * (1 + 1))))
+	{
+		str = malloc(sizeof(char) * (1 + 1));
+		if (str == NULL)
 			return (NULL);
+	}
 	str = ft_alloc(str, s1_cp, charset);
 	return (str);
 }

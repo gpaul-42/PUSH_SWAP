@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 15:40:32 by gpaul             #+#    #+#             */
-/*   Updated: 2020/09/03 02:24:40 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:04:54 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int i)
+int	ft_isalpha(int i)
 {
 	if ((i >= 65 && i <= 90) || (i >= 97 && i <= 122))
 		return (1);

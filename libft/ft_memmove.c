@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 01:48:36 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/08 11:46:21 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:11:01 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	}
 	else
 		ft_memcpy(dst, src, size);
-	return ((void*)dst);
+	return ((void *)dst);
 }

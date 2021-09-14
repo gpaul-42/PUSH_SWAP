@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 17:22:38 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/06 15:27:31 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:32:19 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_sep(char c, char str)
+static int	ft_sep(char c, char str)
 {
 	if (c == str)
 		return (1);
@@ -20,11 +20,11 @@ static int		ft_sep(char c, char str)
 		return (0);
 }
 
-static int		ft_count_word(char *str, char c)
+static int	ft_count_word(char *str, char c)
 {
-	int i;
-	int words;
-	int n;
+	int	i;
+	int	words;
+	int	n;
 
 	i = 0;
 	words = 0;
@@ -41,11 +41,11 @@ static int		ft_count_word(char *str, char c)
 	return (words);
 }
 
-static char		**ft_mem(char *str, char c, char **re)
+static char	**ft_mem(char *str, char c, char **re)
 {
-	int i;
-	int x;
-	int n;
+	int	i;
+	int	x;
+	int	n;
 
 	i = 0;
 	x = 0;
@@ -57,18 +57,21 @@ static char		**ft_mem(char *str, char c, char **re)
 		while (str[i] && ft_sep(c, str[i]) == 0 && ++n)
 			i++;
 		if (n > 0)
-			if (!(re[x] = malloc(sizeof(char) * (n + 1))))
+		{
+			re[x] = malloc(sizeof(char) * (n + 1));
+			if (re == NULL)
 				return (0);
+		}
 		x++;
 	}
 	return (re);
 }
 
-static char		**ft_alloc(char *str, char c, char **re, int i)
+static char	**ft_alloc(char *str, char c, char **re, int i)
 {
-	int y;
-	int x;
-	int n;
+	int	y;
+	int	x;
+	int	n;
 
 	y = 0;
 	while (str[i])
@@ -91,17 +94,18 @@ static char		**ft_alloc(char *str, char c, char **re, int i)
 	return (re);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	*str;
 	int		i;
 	char	**re;
 
 	i = 0;
-	if (s == (void*)0)
+	if (s == (void *)0)
 		return (0);
 	str = (char *)s;
-	if (!(re = malloc(sizeof(char *) * (ft_count_word(str, c) + 1))))
+	re = malloc(sizeof(char *) * (ft_count_word(str, c) + 1));
+	if (re == NULL)
 		return (0);
 	if (ft_count_word(str, c) > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 03:03:18 by gpaul             #+#    #+#             */
-/*   Updated: 2020/09/03 03:08:24 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:05:50 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t	i;
 	char	*str;
 
-	str = (char*)s;
+	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
 		str[i] = c;
 		i++;
 	}
-	return ((void*)str);
+	return ((void *)str);
 }

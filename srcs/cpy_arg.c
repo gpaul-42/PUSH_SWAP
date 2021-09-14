@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/13 19:41:44 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/14 18:22:29 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ static int	check_dup_param(t_info *tab)
 	int	n;
 
 	i = 0;
-	while (i < tab->size)
+	while (i < tab->size_a)
 	{
 		n = i + 1;
-		while (n < tab->size)
+		while (n < tab->size_a)
 		{
 			if (tab->a[n] == tab->a[i])
 				error_free(tab);
@@ -57,12 +57,10 @@ int	*cpy_arg(int argc, char **argv, t_info *tab)
 	int	i;
 	int	n;
 
-	tab->size = argc - 1;
+	tab->size_a = argc - 1;
+	tab->size_b = 0;
 	check_valid_param(argc, argv, tab);
-	tab->a = malloc(sizeof(int) * tab->size);
-	tab->b = malloc(sizeof(int) * tab->size);
-	if (tab->a == NULL || tab->b == NULL)
-		error_free(tab);
+	tab->a = check_malloc(tab->size_a, tab);
 	i = 1;
 	n = 0;
 	while (i < argc)

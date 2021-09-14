@@ -6,18 +6,19 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:42:20 by gpaul             #+#    #+#             */
-/*   Updated: 2021/01/07 14:19:45 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/06/30 16:29:25 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_rev(char *re)
+static char	*ft_rev(char *re, int index)
 {
 	int		i;
 	int		n;
 	char	temp;
 
+	re[index] = '\0';
 	i = 0;
 	n = ft_strlen(re);
 	while (i < n)
@@ -31,14 +32,14 @@ static char		*ft_rev(char *re)
 	return (re);
 }
 
-static char		*ft_zero(char *re)
+static char	*ft_zero(char *re)
 {
 	re[0] = '0';
 	re[1] = '\0';
 	return (re);
 }
 
-static int		size_count(int n)
+static int	size_count(int n)
 {
 	int		res;
 
@@ -51,7 +52,7 @@ static int		size_count(int n)
 	return (res + 1);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*re;
 	int		i;
@@ -61,7 +62,8 @@ char			*ft_itoa(int n)
 	nb = n;
 	i = 0;
 	signe = 0;
-	if (!(re = malloc(sizeof(char) * size_count(n) + 1)))
+	re = malloc(sizeof(char) * size_count(n) + 1);
+	if (re == NULL)
 		return (0);
 	if (nb == 0)
 		return (ft_zero(re));
@@ -76,6 +78,5 @@ char			*ft_itoa(int n)
 	}
 	if (signe == 1)
 		re[i++] = '-';
-	re[i] = '\0';
-	return (ft_rev(re));
+	return (ft_rev(re, i));
 }
