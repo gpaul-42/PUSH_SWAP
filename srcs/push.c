@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/14 18:41:53 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/24 01:22:47 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,14 @@ static int	push_b_a(t_info *tab)
 int	push(t_info *tab, int mode)
 {
 	if (mode == 0)
+	{
 		push_a_b(tab);
+		write(1, "pb\n", 1);
+	}
 	else
+	{
 		push_b_a(tab);
+		write(1, "pa\n", 1);
+	}
 	return (0);
 }

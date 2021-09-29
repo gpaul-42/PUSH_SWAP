@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/24 01:17:44 by gpaul            ###   ########.fr       */
+/*   Created: 2020/07/18 19:52:42 by gpaul             #+#    #+#             */
+/*   Updated: 2021/09/24 02:02:41 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-
-void	ft_error(void)
+static int	cmp(int x, int y)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(EXIT_FAILURE);
+	if (x > y)
+		return (-1);
+	else
+		return (0);
 }
 
-void	error_free(t_info *tab)
+int	ft_is_sort(int *tab, int length)
 {
-	if (tab->a != NULL)
-		free(tab->a);
-	if (tab->b != NULL)
-		free(tab->b);
-	free(tab);
-	ft_error();
-}
+	int	i;
+	int	d;
 
-void	exit_free(t_info *tab)
-{
-	if (tab->a != NULL)
-		free(tab->a);
-	if (tab->b != NULL)
-		free(tab->b);
-	free(tab);
-	exit(EXIT_SUCCESS);
+	i = 1;
+	d = 1;
+	while (i < length)
+	{
+		if (cmp(tab[i - 1], tab[i]) < 0)
+			d = 0;
+		i++;
+	}
+	if (d == 1)
+		return (1);
+	else
+		return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/14 18:42:46 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/24 01:33:56 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,12 @@ int		push(t_info *tab, int mode);
 	UTILS
 */
 void	*check_malloc(int size, t_info *tab);
+void	exit_free(t_info *tab);
+
+/*
+	SOLVING
+*/
+int	ft_is_sort(int *tab, int length);
+int	solver(t_info *tab);
 
 #endif
