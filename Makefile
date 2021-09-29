@@ -6,7 +6,7 @@
 #    By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/21 03:32:26 by gpaul             #+#    #+#              #
-#    Updated: 2021/09/24 01:18:29 by gpaul            ###   ########.fr        #
+#    Updated: 2021/09/29 17:41:32 by gpaul            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ _SRCS =		main.c			\
 			utils.c			\
 			ft_is_sort.c	\
 			solver.c		\
+			sort.c			\
+			solver_utils.c	\
 
 SRCS_DIR = srcs
 SRCS = $(addprefix $(SRCS_DIR)/, $(_SRCS))

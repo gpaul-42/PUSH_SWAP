@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/24 01:33:56 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/29 18:08:52 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,18 @@ typedef struct s_info
 {
 	int		size_a;
 	int		size_b;
+	int		size_sort;
 	int		*a;
 	int		*b;
+	int		*sort;
 	int		x_push;
 }				t_info;
+
+
+void printArray(int arr[], int size);
+
+
+
 /*
 	ERROR
 */
@@ -34,6 +42,7 @@ void	error_free(t_info *tab);
 	PARSE
 */
 int		*cpy_arg(int argc, char **argv, t_info *tab);
+void	cpy_sort(t_info *tab);
 /*
 	OPERATIONS
 */
@@ -46,6 +55,12 @@ int		push(t_info *tab, int mode);
 */
 void	*check_malloc(int size, t_info *tab);
 void	exit_free(t_info *tab);
+void	bubblesort(int arr[], int n);
+int		rra_or_ra(t_info *tab);
+
+
+void	rra_ra(t_info *tab, int mode);
+
 
 /*
 	SOLVING

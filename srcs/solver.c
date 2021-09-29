@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 01:18:15 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/24 02:58:53 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/09/29 18:34:14 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,36 @@ static int	solve_3(int *tab, int size)
 	return (0);
 }
 
+static void	solve_5_utils(t_info *tab)
+{
+	int	i;
+
+	i = 0;
+	if (tab->b[0] < tab->a[0])
+		push(tab, 1);
+	else if (tab->b[0] > tab->a[tab->size_a - 1])
+	{
+		push(tab, 1);
+		rotate(tab->a, tab->size_a);
+		write(1, "ra\n", 3);
+	}
+	else
+		rra_ra(tab, rra_or_ra(tab));
+}
+
+static int	solve_5(t_info *tab)
+{
+	int	i;
+
+	i = 0;
+	push(tab, 0);
+	push(tab, 0);
+	solve_3(tab->a, tab->size_a);
+	solve_5_utils(tab);
+	solve_5_utils(tab);
+	return (0);
+}
+
 int	solver(t_info *tab)
 {
 	if (tab->size_a == 2 && ft_is_sort(tab->a, tab->size_a) != 1)
@@ -48,5 +78,7 @@ int	solver(t_info *tab)
 	}
 	if (tab->size_a == 3 && tab->size_b == 0)
 		solve_3(tab->a, tab->size_a);
+	if (tab->size_a == 5)
+		solve_5(tab);
 	return (0);
 }
