@@ -1,74 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cpy_arg.c                                          :+:      :+:    :+:   */
+/*   cpy_arg2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/10/13 17:29:56 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/10/13 20:02:38 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	check_valid_param(int argc, char **argv, t_info *tab)
+static int	check_valid_param2(char *argv, t_info *tab)
 {
 	int	i;
-	int	n;
-
-	i = 1;
-	while (i < argc)
-	{
-		n = 0;
-		while (argv[i][n])
-		{
-			if (ft_isdigit(argv[i][n]) == 0)
-				error_free(tab);
-			n++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	check_dup_param(t_info *tab)
-{
-	int	i;
-	int	n;
 
 	i = 0;
-	while (i < tab->size_a)
+	while (argv[i])
 	{
-		n = i + 1;
-		while (n < tab->size_a)
-		{
-			if (tab->a[n] == tab->a[i])
-				error_free(tab);
-			n++;
-		}
-		i++;
+		while (ft_isdigit(argv[i]) == 1 && argv[i])
+			i++;
+		if (argv[i] == 32 || !argv[i])
+			tab->size_a += 1;
+		else
+			error_free(tab);
+		if (argv[i])
+			i++;
 	}
 	return (0);
 }
 
-int	cpy_arg(int argc, char **argv, t_info *tab)
+static int	alloc(char *argv, t_info *tab)
 {
-	int	i;
-	int	n;
+	char	*tmp;
+	int		i;
+	int		n;
+	int		x;
 
-	tab->size_a = argc - 1;
-	tab->size_b = 0;
-	check_valid_param(argc, argv, tab);
-	tab->a = check_malloc(tab->size_a, tab);
-	i = 1;
-	n = 0;
-	while (i < argc)
+	x = 0;
+	i = 0;
+	tmp = malloc(sizeof(char) * 10);
+	while (argv[i])
 	{
-		tab->a[n] = ft_atoi(argv[i]);
-		n++;
-		i++;
+		n = 0;
+		while (ft_isdigit(argv[i]) == 1 && argv[i])
+		{
+			tmp[n] = argv[i];
+			i++;
+			n++;
+		}
+		if (argv[i])
+			i++;
+		tab->a[x] = ft_atoi(tmp);
+		x++;
+		ft_memset(tmp, '\0', 10);
 	}
-	check_dup_param(tab);
+	free(tmp);
+	return (0);
+}
+
+int	cpy_arg2(char **argv, t_info *tab)
+{
+	tab->size_b = 0;
+	check_valid_param2(argv[1], tab);
+	tab->a = check_malloc(tab->size_a, tab);
+	alloc(argv[1], tab);
 	return (0);
 }

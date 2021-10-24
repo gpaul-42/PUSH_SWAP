@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/29 18:08:52 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/10/13 17:30:02 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_info
 	int		*b;
 	int		*sort;
 	int		x_push;
+	int		chunk_nbr;
+	int		chunk_rest;
 }				t_info;
 
 
@@ -41,7 +43,9 @@ void	error_free(t_info *tab);
 /*
 	PARSE
 */
-int		*cpy_arg(int argc, char **argv, t_info *tab);
+int		cpy_arg(int argc, char **argv, t_info *tab);
+int		cpy_arg2(char **argv, t_info *tab);
+int		check_dup_param(t_info *tab);
 void	cpy_sort(t_info *tab);
 /*
 	OPERATIONS

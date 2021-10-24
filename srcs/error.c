@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/09/24 01:17:44 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/10/06 17:21:00 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	exit_free(t_info *tab)
 		free(tab->a);
 	if (tab->b != NULL)
 		free(tab->b);
+	if (tab->sort != NULL)
+		free(tab->sort);
 	free(tab);
 	exit(EXIT_SUCCESS);
 }
