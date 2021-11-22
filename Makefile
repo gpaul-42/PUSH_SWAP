@@ -6,23 +6,25 @@
 #    By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/21 03:32:26 by gpaul             #+#    #+#              #
-#    Updated: 2021/10/13 17:14:28 by gpaul            ###   ########.fr        #
+#    Updated: 2021/11/22 23:10:04 by gpaul            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-_SRCS =		main.c			\
-			cpy_arg.c		\
-			cpy_arg2.c		\
-			error.c			\
-			operations.c	\
-			push.c			\
-			utils.c			\
-			ft_is_sort.c	\
-			solver.c		\
-			sort.c			\
-			solver_utils.c	\
+_SRCS =		main.c				\
+			cpy_arg.c			\
+			cpy_arg2.c			\
+			error.c				\
+			operations.c		\
+			push.c				\
+			utils.c				\
+			ft_is_sort.c		\
+			solver.c			\
+			sort.c				\
+			solver_utils.c		\
+			simplified.c		\
+
 
 SRCS_DIR = srcs
 SRCS = $(addprefix $(SRCS_DIR)/, $(_SRCS))

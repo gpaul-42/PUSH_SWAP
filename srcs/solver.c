@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 01:18:15 by gpaul             #+#    #+#             */
-/*   Updated: 2021/10/10 01:19:03 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/11/22 23:15:36 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,56 +69,6 @@ static int	solve_5(t_info *tab)
 	return (0);
 }
 
-static int	solve_else(t_info *tab)
-{
-	int i;
-	int n;
-	int nbr_action;
-
-	i = 0;
-	n = 0;
-	nbr_action = 0;
-
-	while (n < tab->size_sort)
-	{
-		while (i < tab->size_a - 1 && tab->a[i] != tab->sort[n])
-			i++;
-		if (tab->a[i] == tab->sort[n])
-			break;
-		else
-		{
-			i = 0;
-			n++;
-		}
-	}
-
-	if (i > tab->size_a / 2)
-	{
-		nbr_action = tab->size_a - i;
-		i = 0;
-		while (nbr_action > i)
-		{
-			rev_rotate(tab->a, tab->size_a);
-			write(1, "rra\n", 4);
-			i++;
-		}
-		push(tab, 0);
-	}
-	else if (i <= tab->size_a / 2)
-	{
-		nbr_action = i;
-		i = 0;
-		while (nbr_action > i)
-		{
-			rotate(tab->a, tab->size_a);
-			write(1, "ra\n", 3);
-			i++;
-		}
-		push(tab, 0);
-	}
-	return (0);
-}
-
 int	solver(t_info *tab)
 {
 	if (tab->size_a == 2 && ft_is_sort(tab->a, tab->size_a) != 1)
@@ -132,15 +82,7 @@ int	solver(t_info *tab)
 		solve_5(tab);
 	else if (tab->size_a > 5)
 	{
-		//tab->chunk_nbr = tab->size_sort % 5;
-		//tab->chunk_rest = tab->size_sort / 5;
-		while (tab->size_a > 0)
-			solve_else(tab);
-		while (tab->size_b > 0)
-			push(tab, 1);
-		//printArray(tab->a, tab->size_a);
 		
-
 	}
 	return (0);
 }
