@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/22 23:07:31 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/11/25 16:01:07 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,11 @@ static int	push_a_b(t_info *tab)
 	tab->size_a = tab->size_a - 1;
 	tab->size_b = tab->size_b + 1;
 	tab->x_push = 0;
-
-	/////////////////////
-
-	tab->simple = push_fr(tab->size_simple, tab->simple, tab);		////////////////////
-	tab->simple_b = push_to(tab->size_simple_b, tab->simple_b, tab);	///////////////
+	tab->simple = push_fr(tab->size_simple, tab->simple, tab);
+	tab->simple_b = push_to(tab->size_simple_b, tab->simple_b, tab);
 	tab->size_simple--;
 	tab->size_simple_b++;
 	tab->x_push = 0;
-	
 	return (0);
 }
 
@@ -95,15 +91,11 @@ static int	push_b_a(t_info *tab)
 	tab->size_a = tab->size_a + 1;
 	tab->size_b = tab->size_b - 1;
 	tab->x_push = 0;
-
-		/////////////////////
-
-	tab->simple_b = push_fr(tab->size_simple_b, tab->simple_b, tab);	///////////////
-	tab->simple = push_to(tab->size_simple, tab->simple, tab);		////////////////////
+	tab->simple_b = push_fr(tab->size_simple_b, tab->simple_b, tab);
+	tab->simple = push_to(tab->size_simple, tab->simple, tab);
 	tab->size_simple++;
 	tab->size_simple_b--;
 	tab->x_push = 0;
-	
 	return (0);
 }
 

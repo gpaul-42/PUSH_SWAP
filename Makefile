@@ -6,7 +6,7 @@
 #    By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/21 03:32:26 by gpaul             #+#    #+#              #
-#    Updated: 2021/11/22 23:10:04 by gpaul            ###   ########.fr        #
+#    Updated: 2021/11/25 15:43:02 by gpaul            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,7 @@ _SRCS =		main.c				\
 			ft_is_sort.c		\
 			solver.c			\
 			sort.c				\
-			solver_utils.c		\
-			simplified.c		\
+			radix.c		\
 
 
 SRCS_DIR = srcs

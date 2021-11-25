@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/22 23:09:07 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/11/25 15:53:17 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 # include "../libft/libft.h"
 
 # include <stdio.h>
+
+typedef struct s_rad
+{
+	int		max_size;
+	int		size;
+	int		bit_len;
+	int		n;
+	int		i;
+	int		first;
+
+}				t_rad;
 
 typedef struct s_info
 {
@@ -30,8 +41,7 @@ typedef struct s_info
 	int		*simple;
 	int		*simple_b;
 	int		x_push;
-	int		chunk_nbr;
-	int		chunk_rest;
+	t_rad	*rad;
 }				t_info;
 
 
@@ -64,18 +74,7 @@ int		push(t_info *tab, int mode);
 void	*check_malloc(int size, t_info *tab);
 void	exit_free(t_info *tab);
 void	bubblesort(int arr[], int n);
-void	simplified(t_info *tab);
-
-int		rra_or_ra(t_info *tab);
-void	rra_ra(t_info *tab, int mode);
-
-/*
-	CONVERT BASE
-*/
-char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
-int		ft_atoi_base(char *str, char *base_from, char *base_to);
-int		check_base(char *base);
-
+void	simplified(t_info *tab, t_rad *rad);
 
 /*
 	SOLVING
