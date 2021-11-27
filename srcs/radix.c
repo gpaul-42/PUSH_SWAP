@@ -6,13 +6,13 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:15:21 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/25 16:03:52 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/11/27 17:58:47 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	radix2(t_info *tab, t_rad *rad)
+static void	radix2(t_info *tab, t_rad *rad)
 {
 	rad->first = tab->simple[0];
 	if (((rad->first >> rad->i) & 1) == 1)
@@ -26,7 +26,7 @@ void	radix2(t_info *tab, t_rad *rad)
 	rad->n++;
 }
 
-void	radix(t_info *tab, t_rad *rad)
+static void	radix(t_info *tab, t_rad *rad)
 {
 	rad->size = tab->size_simple;
 	rad->max_size = rad->size - 1;

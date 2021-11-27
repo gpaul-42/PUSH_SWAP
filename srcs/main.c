@@ -6,19 +6,11 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/25 16:04:37 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/11/27 17:54:44 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void printArray(int arr[], int size)
-{
-	int i;
-	for (i = 0; i < size; i++)
-		printf("%d ", arr[i]);
-	printf("\n");
-}
 
 int	main(int argc, char **argv)
 {
@@ -36,7 +28,6 @@ int	main(int argc, char **argv)
 	cpy_sort(tab);
 	bubblesort(tab->sort, tab->size_sort);
 	solver(tab);
-	//printArray(tab->a, tab->size_a);
 	exit_free(tab);
 	return (0);
 }
