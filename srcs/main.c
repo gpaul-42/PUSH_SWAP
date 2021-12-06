@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		ft_error();
-	tab = malloc(sizeof(t_info));
+	tab = malloc(sizeof(t_info) * 1);
 	if (tab == NULL)
 		ft_error();
 	if (argc == 2)
@@ -28,6 +28,6 @@ int	main(int argc, char **argv)
 	cpy_sort(tab);
 	bubblesort(tab->sort, tab->size_sort);
 	solver(tab);
-	exit_free(tab);
+	exit_free(tab, 3);
 	return (0);
 }

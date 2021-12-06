@@ -22,7 +22,7 @@ int	swap(int *tab)
 	return (0);
 }
 
-int	rotate(int *tab, int size)
+int	rotate(int *tab, int size, t_info *struc, int option)
 {
 	int	*tmp;
 	int	i;
@@ -32,7 +32,7 @@ int	rotate(int *tab, int size)
 	x = 1;
 	tmp = malloc(sizeof(int) * size);
 	if (tmp == NULL)
-		return (1);
+		error_free(struc, option);
 	while (x < size)
 	{
 		tmp[i] = tab[x];
@@ -50,7 +50,7 @@ int	rotate(int *tab, int size)
 	return (0);
 }
 
-int	rev_rotate(int *tab, int size)
+int	rev_rotate(int *tab, int size, t_info *struc, int option)
 {
 	int	*tmp;
 	int	i;
@@ -60,7 +60,7 @@ int	rev_rotate(int *tab, int size)
 	x = 0;
 	tmp = malloc(sizeof(int) * size);
 	if (tmp == NULL)
-		return (1);
+		error_free(struc, option);
 	tmp[0] = tab[size - 1];
 	while (x < size - 1)
 	{

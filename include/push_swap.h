@@ -46,7 +46,7 @@ typedef struct s_info
 	ERROR
 */
 void	ft_error(void);
-void	error_free(t_info *tab);
+void	error_free(t_info *tab, int option);
 /*
 	PARSE
 */
@@ -58,14 +58,14 @@ void	cpy_sort(t_info *tab);
 	OPERATIONS
 */
 int		swap(int *tab);
-int		rotate(int *tab, int size);
-int		rev_rotate(int *tab, int size);
-int		push(t_info *tab, int mode);
+int		rotate(int *tab, int size, t_info *struc, int option);
+int		rev_rotate(int *tab, int size, t_info *struc, int option);
+int		push(t_info *tab, int mode, int option);
 /*
 	UTILS
 */
-void	*check_malloc(int size, t_info *tab);
-void	exit_free(t_info *tab);
+void	*check_malloc(int size, t_info *tab, int option);
+void	exit_free(t_info *tab, int option);
 void	bubblesort(int arr[], int n);
 /*
 	SOLVING

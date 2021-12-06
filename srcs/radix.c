@@ -17,12 +17,12 @@ static void	radix2(t_info *tab, t_rad *rad)
 	rad->first = tab->simple[0];
 	if (((rad->first >> rad->i) & 1) == 1)
 	{
-		rotate(tab->simple, tab->size_simple);
-		rotate(tab->a, tab->size_a);
+		rotate(tab->simple, tab->size_simple, tab, 3);
+		rotate(tab->a, tab->size_a, tab, 3);
 		write(1, "ra\n", 3);
 	}
 	else
-		push(tab, 0);
+		push(tab, 0, 3);
 	rad->n++;
 }
 
@@ -40,7 +40,7 @@ static void	radix(t_info *tab, t_rad *rad)
 		while (rad->n < rad->size)
 			radix2(tab, rad);
 		while (tab->size_simple_b)
-			push(tab, 1);
+			push(tab, 1, 3);
 		rad->i++;
 	}
 }
@@ -51,8 +51,9 @@ void	simplified(t_info *tab, t_rad *rad)
 	int	x;
 	int	j;
 
-	tab->simple = check_malloc(tab->size_a, tab);
+	tab->simple = check_malloc(tab->size_a, tab, 2);
 	tab->size_simple = tab->size_a;
+	tab->size_simple_b = 0;
 	i = 0;
 	x = 0;
 	while (i < tab->size_a)

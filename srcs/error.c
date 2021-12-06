@@ -18,30 +18,30 @@ void	ft_error(void)
 	exit(EXIT_FAILURE);
 }
 
-void	error_free(t_info *tab)
+void	error_free(t_info *tab, int option)
 {
-	if (tab->a != NULL)
+	if (option > 0)
 		free(tab->a);
-	if (tab->simple != NULL)
-		free(tab->simple);
-	if (tab->sort != NULL)
+	if (option >= 1)
 		free(tab->sort);
-	if (tab->rad != NULL)
+	if (option >= 2)
 		free(tab->rad);
+	if (option >= 3)
+		free(tab->simple);
 	free(tab);
 	ft_error();
 }
 
-void	exit_free(t_info *tab)
+void	exit_free(t_info *tab, int option)
 {
-	if (tab->a != NULL)
+	if (option > 0)
 		free(tab->a);
-	if (tab->simple != NULL)
-		free(tab->simple);
-	if (tab->sort != NULL)
+	if (option >= 1)
 		free(tab->sort);
-	if (tab->rad != NULL)
+	if (option >= 2)
 		free(tab->rad);
+	if (option >= 3)
+		free(tab->simple);
 	free(tab);
 	exit(EXIT_SUCCESS);
 }

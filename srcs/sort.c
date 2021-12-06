@@ -45,7 +45,7 @@ void	cpy_sort(t_info *tab)
 	int	i;
 
 	tab->size_sort = tab->size_a;
-	tab->sort = check_malloc(tab->size_sort, tab);
+	tab->sort = check_malloc(tab->size_sort, tab, 0);
 	i = 0;
 	while (i < tab->size_sort)
 	{

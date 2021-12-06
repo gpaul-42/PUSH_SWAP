@@ -22,14 +22,14 @@ _SRCS =		main.c				\
 			ft_is_sort.c		\
 			solver.c			\
 			sort.c				\
-			radix.c		\
+			radix.c				\
 
 
 SRCS_DIR = srcs
 SRCS = $(addprefix $(SRCS_DIR)/, $(_SRCS))
 SRCO = $(SRCS:.c=.o)
 
-FLAG = -Wall -Wextra -Werror #-g -fsanitize=address
+FLAG = -Wall -Wextra -Werror #-fsanitize=address #-g
 INC = -I include/
 
 all : $(NAME)

@@ -24,7 +24,7 @@ static int	check_valid_param(int argc, char **argv, t_info *tab)
 		while (argv[i][n])
 		{
 			if (ft_isdigit(argv[i][n]) == 0)
-				error_free(tab);
+				error_free(tab, -1);
 			n++;
 		}
 		i++;
@@ -44,7 +44,7 @@ int	check_dup_param(t_info *tab)
 		while (n < tab->size_a)
 		{
 			if (tab->a[n] == tab->a[i])
-				error_free(tab);
+				error_free(tab, 0);
 			n++;
 		}
 		i++;
@@ -60,7 +60,7 @@ int	cpy_arg(int argc, char **argv, t_info *tab)
 	tab->size_a = argc - 1;
 	tab->size_b = 0;
 	check_valid_param(argc, argv, tab);
-	tab->a = check_malloc(tab->size_a, tab);
+	tab->a = check_malloc(tab->size_a, tab, -1);
 	i = 1;
 	n = 0;
 	while (i < argc)

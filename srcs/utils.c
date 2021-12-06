@@ -12,12 +12,12 @@
 
 #include "../include/push_swap.h"
 
-void	*check_malloc(int size, t_info *tab)
+void	*check_malloc(int size, t_info *tab, int option)
 {
 	int	*tmp;
 
 	tmp = malloc(sizeof(int) * size);
 	if (tmp == NULL)
-		error_free(tab);
+		error_free(tab, option);
 	return (tmp);
 }
