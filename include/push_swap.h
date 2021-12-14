@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 18:56:19 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 19:05:17 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+
+# include <stdio.h>
 
 typedef struct s_rad
 {

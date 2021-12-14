@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 16:47:29 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 18:56:38 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 19:11:35 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,8 @@ int	solve_5(t_info *tab, int loop)
 	push(tab, 1, 3);
 	push(tab, 1, 3);
 	free(count);
+
+	// for(int i = 0; i < tab->size_a; i++)
+	// 	printf("%d\n", tab->a[i]);
 	return (0);
 }

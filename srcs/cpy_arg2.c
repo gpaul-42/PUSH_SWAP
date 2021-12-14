@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 18:54:04 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 19:14:23 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ static int	alloc(char *argv, t_info *tab)
 int	cpy_arg2(char **argv, t_info *tab)
 {
 	tab->size_b = 0;
+	tab->size_a = 0;
 	check_valid_param2(argv[1], tab);
 	tab->a = check_malloc(tab->size_a, tab, -1);
 	alloc(argv[1], tab);
