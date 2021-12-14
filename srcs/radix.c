@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:15:21 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/27 17:58:47 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 18:59:49 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@ static void	radix(t_info *tab, t_rad *rad)
 	}
 }
 
-void	simplified(t_info *tab, t_rad *rad)
+void	simplified(t_info *tab, int option)
 {
 	int	i;
 	int	x;
 	int	j;
 
+	tab->rad = check_malloc(sizeof(t_rad), tab, 1);
 	tab->simple = check_malloc(tab->size_a, tab, 2);
 	tab->size_simple = tab->size_a;
 	tab->size_simple_b = 0;
@@ -62,13 +63,11 @@ void	simplified(t_info *tab, t_rad *rad)
 		while (j < tab->size_a)
 		{
 			if (tab->a[i] == tab->sort[j])
-			{
-				tab->simple[x] = j;
-				x++;
-			}
+				tab->simple[x++] = j;
 			j++;
 		}
 		i++;
 	}
-	radix(tab, rad);
+	if (option > 0)
+		radix(tab, tab->rad);
 }

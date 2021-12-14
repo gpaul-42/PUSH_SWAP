@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 01:18:15 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/06 18:30:10 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 18:24:27 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	solve_33(int *tab, int size, t_info *struc)
 	write(1, "rra\n", 4);
 }
 
-static int	solve_3(int *tab, int size, t_info *struc)
+int	solve_3(int *tab, int size, t_info *struc)
 {
 	if (ft_is_sort(tab, size) == 1)
 		return (0);
@@ -59,17 +59,18 @@ int	solver(t_info *tab)
 		write(1, "sa\n", 3);
 		exit_free(tab, 1);
 	}
-	if (tab->size_a == 3)
+	else if (tab->size_a == 3)
 	{
 		solve_3(tab->a, tab->size_a, tab);
 		exit_free(tab, 1);
 	}
-	else
+	else if (tab->size_a == 5)
 	{
-		tab->rad = malloc(sizeof(t_rad) * 1);
-		if (tab->rad == NULL)
-			error_free(tab, 1);
-		simplified(tab, tab->rad);
+		simplified(tab, 0);
+		solve_5(tab, 0);
+		exit_free(tab, 3);
 	}
+	else
+		simplified(tab, 1);
 	return (0);
 }

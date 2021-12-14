@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 15:31:40 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 18:54:04 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,13 @@ static int	check_res(char *tmp, t_info *tab)
 
 static int	alloc(char *argv, t_info *tab)
 {
-	char			*tmp;
-	int				i;
-	int				n;
+	char	*tmp;
+	int		i;
+	int		n;
+	int		x;
 
 	i = 0;
+	x = 0;
 	tmp = malloc(sizeof(char) * 10);
 	if (tmp == NULL)
 		error_free(tab, 0);
@@ -63,7 +65,8 @@ static int	alloc(char *argv, t_info *tab)
 			tmp[n++] = argv[i++];
 		if (argv[i])
 			i++;
-		tab->a[n] = check_res(tmp, tab);
+		tab->a[x] = check_res(tmp, tab);
+		x++;
 		ft_memset(tmp, '\0', 10);
 	}
 	free(tmp);

@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:04:40 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 15:10:39 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 18:56:19 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ typedef struct s_info
 	t_rad	*rad;
 }				t_info;
 
+typedef struct s_five
+{
+	int		move1;
+	int		move2;
+}				t_five;
+
 /*
 	ERROR
 */
@@ -72,6 +78,8 @@ void	bubblesort(int arr[], int n);
 */
 int		ft_is_sort(int *tab, int length);
 int		solver(t_info *tab);
-void	simplified(t_info *tab, t_rad *rad);
+int		solve_5(t_info *tab, int loop);
+int		solve_3(int *tab, int size, t_info *struc);
+void	simplified(t_info *tab, int option);
 
 #endif
