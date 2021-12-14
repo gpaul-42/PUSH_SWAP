@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/25 15:59:00 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:14:10 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_error(void)
 
 void	error_free(t_info *tab, int option)
 {
-	if (option > 0)
+	if (option >= 0)
 		free(tab->a);
 	if (option >= 1)
 		free(tab->sort);

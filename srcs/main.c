@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/11/27 17:54:44 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:12:23 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_info	*tab;
 
 	if (argc < 2)
-		ft_error();
+		return (0);
 	tab = malloc(sizeof(t_info) * 1);
 	if (tab == NULL)
 		ft_error();

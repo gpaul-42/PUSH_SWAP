@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/10/13 17:29:56 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:31:50 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ int	check_dup_param(t_info *tab)
 
 int	cpy_arg(int argc, char **argv, t_info *tab)
 {
-	int	i;
-	int	n;
+	int				i;
+	int				n;
+	long long int	tmp;
 
 	tab->size_a = argc - 1;
 	tab->size_b = 0;
@@ -65,7 +66,10 @@ int	cpy_arg(int argc, char **argv, t_info *tab)
 	n = 0;
 	while (i < argc)
 	{
-		tab->a[n] = ft_atoi(argv[i]);
+		tmp = ft_atoi(argv[i]);
+		if (tmp > 2147483647 || tmp < -2147483648)
+			error_free(tab, 0);
+		tab->a[n] = (int)tmp;
 		n++;
 		i++;
 	}

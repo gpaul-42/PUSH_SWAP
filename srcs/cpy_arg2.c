@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:11:02 by gpaul             #+#    #+#             */
-/*   Updated: 2021/10/13 20:02:38 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:31:40 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,27 @@ static int	check_valid_param2(char *argv, t_info *tab)
 	return (0);
 }
 
+static int	check_res(char *tmp, t_info *tab)
+{
+	long long int	res;
+
+	res = ft_atoi(tmp);
+	if (res > 2147483647 || res < -2147483648)
+	{
+		free(tmp);
+		error_free(tab, 0);
+		return (0);
+	}
+	else
+		return ((int)res);
+}
+
 static int	alloc(char *argv, t_info *tab)
 {
-	char	*tmp;
-	int		i;
-	int		n;
-	int		x;
+	char			*tmp;
+	int				i;
+	int				n;
 
-	x = 0;
 	i = 0;
 	tmp = malloc(sizeof(char) * 10);
 	if (tmp == NULL)
@@ -50,8 +63,7 @@ static int	alloc(char *argv, t_info *tab)
 			tmp[n++] = argv[i++];
 		if (argv[i])
 			i++;
-		tab->a[x] = ft_atoi(tmp);
-		x++;
+		tab->a[n] = check_res(tmp, tab);
 		ft_memset(tmp, '\0', 10);
 	}
 	free(tmp);
