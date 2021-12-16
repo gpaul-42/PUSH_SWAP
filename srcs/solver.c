@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 01:18:15 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 18:24:27 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/16 22:16:23 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	solve_3(int *tab, int size, t_info *struc)
 			|| tab[1] > tab[2]))
 	{
 		rotate(tab, size, struc, 1);
-		write(1, "ra\n", 4);
+		write(1, "ra\n", 3);
 		solve_3(tab, size, struc);
 	}
 	return (0);

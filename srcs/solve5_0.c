@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 16:47:29 by gpaul             #+#    #+#             */
-/*   Updated: 2021/12/14 19:11:35 by gpaul            ###   ########.fr       */
+/*   Updated: 2021/12/16 22:10:19 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	solve_5_1(t_info *tab, int loop, t_five *count)
 		while (count->move2-- > 0)
 		{
 			rotate(tab->a, tab->size_a, tab, 1);
-			write(1, "ra\n", 4);
+			write(1, "ra\n", 3);
 		}
 	}
 	else
@@ -89,8 +89,5 @@ int	solve_5(t_info *tab, int loop)
 	push(tab, 1, 3);
 	push(tab, 1, 3);
 	free(count);
-
-	// for(int i = 0; i < tab->size_a; i++)
-	// 	printf("%d\n", tab->a[i]);
 	return (0);
 }
